@@ -22,6 +22,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
+#gem 'jquery-rails',  '~> 3.0.0'
+
 
 group :development do
 # gem 'sqlite3', '1.3.7'
@@ -37,6 +39,8 @@ gem 'pry-debugger'
   
 end
 
+#gem 'spree', '2.0.11'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -51,3 +55,7 @@ end
 
 # To use debugger
 # gem 'debugger'
+
+gem 'spree', '2.0.11'
+gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-0-stable'
+gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git', :branch => '2-0-stable'
