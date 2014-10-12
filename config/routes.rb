@@ -1,4 +1,8 @@
 Store2::Application.routes.draw do
+  get "pages/test1"
+
+  get "pages/test2"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

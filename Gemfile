@@ -27,7 +27,7 @@ group :development do
 # gem 'sqlite3', '1.3.7'
   #gem 'sqlite3', '1.3.7'
   gem 'letter_opener'
-  gem 'better_errors'
+  gem 'better_errors', '~> 1.1.0'
   gem 'binding_of_caller'
   gem 'quiet_assets'
   #mine:
