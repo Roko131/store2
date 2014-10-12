@@ -94,7 +94,7 @@ module Spree
     preference :intercept_email, :string, :default => nil
 
     # Default smtp settings
-    preference :override_actionmailer_config, :boolean, :default => true
+    preference :override_actionmailer_config, :boolean, :default => false
     preference :mail_host, :string, :default => 'localhost'
     preference :mail_domain, :string, :default => 'localhost'
     preference :mail_port, :integer, :default => 25
