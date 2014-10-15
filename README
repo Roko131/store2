@@ -1,4 +1,10 @@
+category view,
+filter view
+apply search- with view
+
+
 1) pages I modifed:
     spree_application
     products/index
     shared/products
+    pagination: paginator, next, prev, page

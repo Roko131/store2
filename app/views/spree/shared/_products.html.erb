@@ -31,33 +31,15 @@
 
 <% if products.any? %>
     <div class="twelve columns products">
-    <%  products.each.with_index do |product,i| %>
-        <%= content_tag :div, "", class: "clearfix" if true && i%3 == 0 %>
-        <!-- TODO  decide if use clearfix or not- bcz responsive-->
-        <%= render "/shop/index_product", product: product%>
-    <% end %>
-    <div class="clearfix"></div>
-            <!-- Pagination -->
-        <div class="pagination-container">
-            <nav class="pagination">
-                <ul>
-                    <li><a href="#" class="current-page">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                </ul>
-            </nav>
-
-            <nav class="pagination-next-prev">
-                <ul>
-                    <li><a href="#" class="prev"></a></li>
-                    <li><a href="#" class="next"></a></li>
-                </ul>
-            </nav>
-        </div>
+        <%  products.each.with_index do |product,i| %>
+            <%= content_tag :div, "", class: "clearfix" if true && i%3 == 0 %>
+            <!-- TODO  decide if use clearfix or not- bcz responsive-->
+            <%= render "/shop/index_product", product: product%>
+        <% end %>
+        <div class="clearfix"></div>
+        <% if paginated_products.respond_to?(:num_pages) %>
+          <%= paginate paginated_products %>
+        <% end %>
     </div>
 <% end %>
 
-<% if paginated_products.respond_to?(:num_pages) %>
-<% binding.pry %>
-  <%= paginate paginated_products %>
-<% end %>

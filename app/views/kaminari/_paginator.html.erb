@@ -7,6 +7,23 @@
     paginator:     the paginator that renders the pagination tags inside
 -%>
 <%= paginator.render do -%>
+<div class="pagination-container" id="ggg">
+  <nav class="pagination">
+      <ul>
+         <% each_page do |page| -%>
+            <%= page_tag page %>
+         <% end -%>
+    </ul>
+  </nav>
+  <nav class="pagination-next-prev">
+    <ul>
+        <%= prev_page_tag unless current_page.first? %>
+        <%= next_page_tag unless current_page.last? %>
+    </ul>
+  </nav>
+</div>
+<% end -%>
+<% if false %>
   <nav class="pagination">
     <%= first_page_tag unless current_page.first? %>
     <%= prev_page_tag unless current_page.first? %>
@@ -20,4 +37,4 @@
     <%= next_page_tag unless current_page.last? %>
     <%= last_page_tag unless current_page.last? %>
   </nav>
-<% end -%>
+  <% end %>
