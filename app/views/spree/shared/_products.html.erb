@@ -2,7 +2,21 @@
   paginated_products = @searcher.retrieve_products if params.key?(:keywords)
   paginated_products ||= products
 %>
+<!-- ME -->
+<%= render "/shop/side_bar" %> 
 
+    <div class="twelve columns">
+
+        <!-- Ordering -->
+        <select class="orderby">
+            <option>Default Sorting</option>
+            <option>Sort by Popularity</option>
+            <option>Sort by Newness</option>
+        </select>
+
+        
+     </div>
+<!-- ME -->
 <% content_for :head do %>
   <% if paginated_products.respond_to?(:num_pages) %>
     <%= rel_next_prev_link_tags paginated_products %>
@@ -14,21 +28,36 @@
 <% elsif params.key?(:keywords) %>
   <h6 class="search-results-title"><%= Spree.t(:search_results, :keywords => h(params[:keywords])) %></h6>
 <% end %>
+
 <% if products.any? %>
-<ul id="products" class="inline product-listing" data-hook>
-  <% products.each do |product| %>
-    <li id="product_<%= product.id %>" class="columns three <%= cycle("alpha", "secondary", "", "omega secondary", :name => "classes") %>" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
-      <div class="product-image">
-        <%= link_to small_image(product, :itemprop => "image"), product, :itemprop => 'url' %>
-      </div>
-      <%= link_to truncate(product.name, :length => 50), product, :class => 'info', :itemprop => "name", :title => product.name %>
-      <span class="price selling" itemprop="price"><%= display_price(product) %></span>
-    </li>
-  <% end %>
-  <% reset_cycle("classes") %>
-</ul>
+    <div class="twelve columns products">
+    <%  products.each.with_index do |product,i| %>
+        <%= content_tag :div, "", class: "clearfix" if true && i%3 == 0 %>
+        <!-- TODO  decide if use clearfix or not- bcz responsive-->
+        <%= render "/shop/index_product", product: product%>
+    <% end %>
+    <div class="clearfix"></div>
+            <!-- Pagination -->
+        <div class="pagination-container">
+            <nav class="pagination">
+                <ul>
+                    <li><a href="#" class="current-page">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                </ul>
+            </nav>
+
+            <nav class="pagination-next-prev">
+                <ul>
+                    <li><a href="#" class="prev"></a></li>
+                    <li><a href="#" class="next"></a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
 <% end %>
 
 <% if paginated_products.respond_to?(:num_pages) %>
+<% binding.pry %>
   <%= paginate paginated_products %>
 <% end %>

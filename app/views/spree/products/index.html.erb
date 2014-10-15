@@ -6,10 +6,10 @@
       <%= render :partial => 'spree/shared/taxonomies' %>
     <% end %>
   </div>
-<% end %>
+<% end if false %>
 
 
-<% if params[:keywords] %>
+<% if params[:keywords] && false %>
 
   <div data-hook="search_results">
     <% if @products.empty? %>
@@ -21,7 +21,12 @@
 
 <% else %>
 
-  <div data-hook="homepage_products">
+  <!-- <div data-hook="homepage_products"> -->
+  <div class="container">
     <%= render :partial => 'spree/shared/products', :locals => { :products => @products, :taxon => @taxon } %>
   </div>
+  <!-- </div> -->
 <% end %>
+<!-- ME -->
+<div class="margin-top-15"></div>
+<!-- ME -->
