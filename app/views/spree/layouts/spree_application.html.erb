@@ -16,6 +16,10 @@
 <![endif]-->
 </head>
 <body class="boxed">
+   <script>
+       console.log("controller: <%= params[:controller]%>");
+       console.log("action: <%= params[:action]%>");
+   </script>
     <div id="wrapper">
         <%= render 'layouts/top' %>
         <%= yield %>

@@ -2,9 +2,14 @@ category view,
 filter view
 apply search- with view
 
+cart
+login logout, special page
+order process: details, delivery, payment, summary
+breadcrums
 
 1) pages I modifed:
     spree_application
     products/index
     shared/products
     pagination: paginator, next, prev, page
+    taxons: show, _taxon
