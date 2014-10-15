@@ -1,0 +1,23 @@
+<div class="four shop columns">
+    <figure class="product">
+        <div class="mediaholder">
+            <%= link_to [spree, product] do %>
+            <%= product_pic = small_image(product, :itemprop => "image") %>
+                <!-- <img alt="" src="/assets/theme/shop_item_01.jpg"/> -->
+                <div class="cover">
+                    <%= ((p_arr = (product.images + product.variant_images).uniq).size > 1) ? image_tag(p_arr[1].attachment.url(:product)) : product_pic %>
+                    <img alt="" src="/assets/theme/shop_item_01_hover.jpg"/>
+                </div>
+            <% end %>
+            <a href="#" class="product-button"><i class="fa fa-shopping-cart"></i> Add to Cart</a>
+        </div>
+
+        <a href="variable-product-page.html">
+            <section>
+                <span class="product-category">Skirts</span>
+                <h5><%= product.name %></h5>
+                <span class="product-price"><%= display_price(product) %></span>
+            </section>
+        </a>
+    </figure>
+</div>

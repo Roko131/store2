@@ -1,3 +1,139 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.categories_c{
+  float: left;
+  width: 100%;
+  li{
+    a, a span{
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      -ms-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out, ;
+    }
+    a{
+      display: block;
+      padding: 11px 13px 10px 2px;
+      text-decoration: none;
+      color: #777;
+      border-bottom: 1px solid #eee;
+      margin-top: -1px;
+      &:hover, &.active{
+        background-color: #808080;
+        color: #fff;
+        padding-left: 15px;
+      }
+    }
+    li{
+      ul{padding: 0;}
+      a.active{
+        background-color: transparent;
+        padding-left: 25px;
+        font-weight: 600;
+        color: #808080;
+      }
+      ul{padding-left: 15px;}
+      a.active span{color: #808080;}
+      a span{color: #aaa;}
+    }
+    a:hover span, a.active span{color: #fff;}
+    ul{
+      display: none;
+      background-color: #f8f8f8;
+      padding: 15px 0;
+      li{
+        a, a:hover{
+          padding: 3px 25px 4px 25px;
+          border: none;
+          color: #777;
+          background-color: #f8f8f8;
+        }
+        a:hover span, a:hover{color: #808080;}
+      }
+    }
+    a:hover, a.active{ background-color: #3acf87; }
+    li a.active span, li a.active, ul li a:hover span, ul li a:hover { color: #3acf87; }
+  }
+}
+/*
+#categories {
+  float: left;
+  width: 100%;
+}
+
+#categories li a,
+#categories li a span {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out, ;
+}
+
+#categories li a {
+  display: block;
+  padding: 11px 13px 10px 2px;
+  text-decoration: none;
+  color: #777;
+  border-bottom: 1px solid #eee;
+  margin-top: -1px;
+}
+
+#categories li a:hover,
+#categories li a.active {
+  background-color: #808080;
+  color: #fff;
+  padding-left: 15px;
+}
+
+#categories li li ul {
+  padding: 0;
+}
+
+#categories li li a.active {
+  background-color: transparent;
+  padding-left: 25px;
+  font-weight: 600;
+  color: #808080;
+}
+
+#categories li li ul {
+  padding-left: 15px;
+}
+
+#categories li li a.active span {
+  color: #808080;
+}
+
+#categories li a span {
+  color: #aaa;
+}
+
+#categories li a:hover span,
+#categories li a.active span {
+  color: #fff;
+}
+
+#categories li ul {
+  display: none;
+  background-color: #f8f8f8;
+  padding: 15px 0;
+}
+
+
+#categories li ul li a,
+#categories li ul li a:hover  {
+  padding: 3px 25px 4px 25px;
+  border: none;
+  color: #777;
+  background-color: #f8f8f8;
+}
+
+#categories li ul li a:hover span,
+#categories li ul li a:hover  {
+  color: #808080;
+}
+*/

@@ -1,0 +1,168 @@
+1) validdations he hiden- only validate when shown.
+check if some1 uploaded wrong file, (excel for image), then turn hidden off and see if valid catches it.
+
+2) add: demo- in general setting options to show either demo or app itself,
+    GA code,
+    Sponsors, Speakers, change rows
+3) content, with sanitize
+
+4) to each page with image\pdf, make sure:\
+    new format,
+    JS,
+    controller
+    validate image\pdf format
+    see #46
+5) fix blue
+
+6) add place to change colors that will switch all theme colors to new color
+
+7) add advance css, js
+
+8) understand about pictures size: 270 x 220? || 255 x 208  || 590 x 481 ||  345 || 281
+    and all others- also speakers -probably just give them huge size for everything, with mathing ratio
+    
+   speakers: 270 370 || 350 480, ask them to have same ratio, as an example 350 480 is good ratio-
+        and that ALL PICTURES must have same ratio
+        also update rmagic so pic would be saved in right size
+9)
+http://bit.ly/1s8nLa4
+
+10) in general setting- the rows moving, only update after submit, not after moving, same for agenda
+also maybe add 'to_show' checkbox- which will also be updated only after submitting
+
+11) add in notice, when validaations fails, need 2 'reupload' image
+
+12) add h1, h2 .. h6, also "i" to sanitaize, maybe create a default one
+
+13) when 6 speakers do 3 top, 3 bot, not 4 top 2 bot?
+
+14) in agenda section, arrange location order,
+    also give time to dates?
+    
+15) make an option, instead of link + text, file + text-> file link will be automaticly added
+
+16) right now if no nav_name is given- it will not show, instead ask "need nav name" if yes open nav name input
+and do the checking if to show or not based on the true/false and not if nav name is present
+
+17) add to_show on speakers, sponsors
+
+18) add linkln, instagram, to speakers -> include at articule in agenda, and of course in speaker shown
+
+19) add raise error if no ENV name was added
+
+20) page QA
+
+21) make sure that file upload filed acts like picture: able to delete, etc, like in general setting, pdf
+
+22) change date view format- not 10/06/2014, but 10/Jun/2014
+
+23) http://bit.ly/1oktfYq
+
+24) rtl bootstrap, make sm only > 768, make md bigger than 1027 or something, not always...
+
+25) add required look, class to all required if fields
+
+26) if hiding section: to_show = false, then instead of ignoring validations,
+    add in controller, if to_show = false then update_attribute, to show -> false, and redirect WITHOUT SAVING
+    and add in to_show hint: "If this option is false all other input will be ignored" 
+
+27) Sitting with Eli, giving default text to every section title, header, subtitle, content etc, 
+
+28) http://bit.ly/1uvfzAZ
+
+29) fix counter
+
+30) make default counter minutes at 00
+
+31) fix agenda index page, it's not arranged by time as it should be
+
+32) add option to hide time, in agenda 
+
+33) agenda time is 11:00, 12:00 01:00 -> not good, need 24h display.
+    Also add an option to display on am/pm format (remember to add am/pm to display)
+
+34) move agenda pdf file from general setting to agenda section, make it appear at agenda section below subtitle
+    remove, the other setting for it
+    
+35) add place to selecr facebook / linkein text 
+
+36) clean: modals not used, post's, not used pics, preivew pics, background pics.
+
+37) transfer from event-me to event-wizard
+
+38) admin: when section visible show V, else show X
+
+39) admin: conatct , valid that if show then must have email to send messages 
+
+40) admin agenda, change from to, into starts, ends
+
+41) duplicate agenda item option
+
+42) actually check if letters are really smaller in hebrew. hewbrew make header subtitle, maybe others, font bigger cause it's very small ni hebrew
+
+43) sponsors: add option: hide tier name? --> then do visibiliy: hidden;
+
+44) sponsors 4 pics, one goes sideway? 
+
+45) add required * to all required fields, also the if then required
+
+46) also see #4 get rid of delete image? where image is mandadory. (bcz then you can't really delete it)
+    same for pdf files 
+    
+47) add app name at header (ENV[app_name])
+
+48) after section update redirect to general setting, http://bit.ly/1nyCt8z, with errores, without
+
+49) speakers, sponors, greetings -> form: update, back to menu link in center
+
+50) update buttons in blue, also http://bit.ly/1tdHj7l
+
+51) userside, contact form, letters bottom are not visible: http://bit.ly/1rElqjQ
+
+52) clearfix div for speakers sponsors, greetings,  clearfix-col6, clearfix-col3, clearfix-col4.
+    Or enforce same pics sizes.
+    
+53) http://bit.ly/1vtHTkb IE not working, can't submit- not showing errors correctly
+
+54) Only allow Contact section if an email field to send the messages was filled
+
+55) spoonsors, speakers, greetings, add to_show / hide button, intergrate with index page  
+
+56) make badges look nicer, clearer
+
+57) fix slider image so it won't be hidden
+
+58) more than one silder image?
+
+59) ckeditor: by default add classes to elemets created: like add to 'p' elements the text-lg class, add to 'ul' the text-md class etc http://bit.ly/YUjw42
+
+60) event logo, give pic example for good/bad logo - good: 100% letters height, bad: 50% > letters height
+
+61) add direction to speaker (also greeting? anything with modal), so http://bit.ly/Z2TeNp will show left to right, even though it's hebrew form
+
+62) counter starts at :30 or :00, not current minute
+
+63) duplicate agenda items option
+
+64) fix dragrable so it wil, move the box being move so the curor will be ON IT, not above it
+
+65) explain in all ckeditors, that Enter= double space- they probably want shift + enter, also
+    explain about RTL, neeed to make sure ckeditor is in rtl mode b4 start typing
+    Maybe also make it for them when they see it for first time, just like the default is clicked once they
+        click the canvas space - Only when RTL mode is on
+
+66) When RTL, make admin fields RTL, specially subttile fileds, speaker/s greeeting description etc
+
+67) add https to admin
+
+68) http://bit.ly/1rXWAxV
+
+69) ckeditor, Instead of advance mode, add to interface size option, HUGE, LARGE, BIG MEDIUM, and do respoonsive accordingly, http://bit.ly/1n5c7dT
+
+70) limit navigation titles, to 7
+
+71) admin navigation menu -> by url path, Website option always open?
+
+72) http://bit.ly/1vLC6se 
+
+73) required at all required field, can use at form header, defaults: {required : true}
