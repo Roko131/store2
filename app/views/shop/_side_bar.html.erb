@@ -139,16 +139,24 @@
             <div class="padding-range"><div id="slider-range"></div></div>
             <label for="amount">Price:</label>
             <input type="text" id="amount"/>
-            <a href="#" class="button color">Filter</a>
+            <a id="filter_link" href="#" class="button color">Filter</a>
         </div>
         <div class="clearfix"></div>
     </div>
-    <%= form_tag '', :method => :get, :id => 'sidebar_products_search' do %>
-    <input type="checkbox"
-                     id="label"
-                     name="search[price_range_any][]"
-                     value="<%= val %>"
-                     <%= params[:search][filter[:scope]] && params[:search][filter[:scope]].include?(val.to_s) ? "checked" : "" %> />
-        <%= submit_tag Spree.t(:search), :name => nil %>
+    
+    <% filters = @taxon ? @taxon.applicable_filters : [Spree::Core::ProductFilters.all_taxons] %>
+    <% unless filters.empty? %>
+        <%= form_tag '', :method => :get, :id => 'sidebar_products_search' do %>
+            <% params[:search] ||= {} %>
+            <%= hidden_field_tag 'per_page', params[:per_page] %>
+            <% filter = filters.first %>
+            <input type="checkbox"
+                             id="filter_cb"
+                             name="search[price_range_any][]"
+                             value="val"
+                             checked="checked"
+                             <%= params[:search][filter[:scope]] && params[:search][filter[:scope]].include?(val.to_s) ? "checked" : "" if false %> />
+                <%= submit_tag Spree.t(:search), :name => nil, id: "filter_cb_submit" %>
+      <% end %>
   <% end %>
 </div>

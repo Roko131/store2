@@ -231,10 +231,13 @@
 			slide: function( event, ui ) {
         event = event;
 				$( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+				$( "#filter_cb" ).val( "$" + ui.values[ 0 ] + ".00 - $" + ui.values[ 1 ] + ".00" );
 			}
 		});
 		$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
 			" - $" + $( "#slider-range" ).slider( "values", 1 ) );
+		$( "#filter_cb" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+			".00 - $" + $( "#slider-range" ).slider( "values", 1 ) + ".00" );
 
 
 
