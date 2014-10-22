@@ -8,7 +8,6 @@ module Spree
     def show
       @taxon = Taxon.find_by_permalink!(params[:id])
       return unless @taxon
-
       @searcher = build_searcher(params.merge(:taxon => @taxon.id))
       @products = @searcher.retrieve_products
     end

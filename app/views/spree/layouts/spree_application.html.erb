@@ -8,7 +8,10 @@
     <%= render :partial => 'spree/shared/head' %>
   </head>
   <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
-
+   <script>
+       console.log("controller: <%= params[:controller]%>");
+       console.log("action: <%= params[:action]%>");
+   </script>
     <div class="container">
 
       <%= render :partial => 'spree/shared/header' %>
