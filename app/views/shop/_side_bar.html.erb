@@ -143,5 +143,12 @@
         </div>
         <div class="clearfix"></div>
     </div>
-
+    <%= form_tag '', :method => :get, :id => 'sidebar_products_search' do %>
+    <input type="checkbox"
+                     id="label"
+                     name="search[price_range_any][]"
+                     value="<%= val %>"
+                     <%= params[:search][filter[:scope]] && params[:search][filter[:scope]].include?(val.to_s) ? "checked" : "" %> />
+        <%= submit_tag Spree.t(:search), :name => nil %>
+  <% end %>
 </div>
