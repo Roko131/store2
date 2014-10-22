@@ -8,12 +8,16 @@
 <% end %>
 
 <div data-hook="taxon_products">
+      <div class="container">
+
   <%= render :partial => 'spree/shared/products', :locals => { :products => @products, :taxon => @taxon } %>
+</div>
 </div>
 
 <% unless params[:keywords].present? %>
   <div data-hook="taxon_children">
     <%= render :partial => 'taxon', :collection => @taxon.children %>
   </div>
-<% end %>
+<% end if false %>
 
+<div class="margin-top-15"></div>
