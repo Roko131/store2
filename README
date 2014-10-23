@@ -8,3 +8,12 @@ apply search- with view
     products/index
     shared/products
     pagination: paginator, next, prev, page
+
+
+"spree/taxons" == params[:controller] && @taxon.children.empty?
+
+
+"spree/products" == params[:controller] && @taxon
+
+<% filters = @taxon ? @taxon.applicable_filters : [Spree::Core::ProductFilters.all_taxons] %>
+<% unless filters.empty? %>
