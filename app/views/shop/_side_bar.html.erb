@@ -143,20 +143,22 @@
         </div>
         <div class="clearfix"></div>
     </div>
-    
+    <%= text_field_tag 'min_price', params[:min_price], form: 'sidebar_products_search', id: "min_price" %>
+    <%= hidden_field_tag 'min_price', params[:min_price], form: 'sidebar_products_search', id: "min_price" if false %>
+    <%= text_field_tag 'max_price', params[:max_price], form: 'sidebar_products_search', id: "max_price" %>
     <% filters = @taxon ? @taxon.applicable_filters : [Spree::Core::ProductFilters.all_taxons] %>
     <% unless filters.empty? %>
-        <%= form_tag '', :method => :get, :id => 'sidebar_products_search' do %>
+        <%= form_tag '', :method => :get, :id => 'sidebar_products_search',style: "display:none;" do %>
             <% params[:search] ||= {} %>
             <%= hidden_field_tag 'per_page', params[:per_page] %>
             <% filter = filters.first %>
-            <input type="checkbox"
-                             id="filter_cb"
-                             name="search[price_range_any][]"
-                             value="val"
-                             checked="checked"
+            <!-- <input type="checkbox" -->
+                             <!-- id="filter_cb" -->
+                             <!-- name="search[price_range_any][]" -->
+                             <!-- value="val" -->
+                             <!-- checked="checked" -->
                              <%= params[:search][filter[:scope]] && params[:search][filter[:scope]].include?(val.to_s) ? "checked" : "" if false %> />
-                <%= submit_tag Spree.t(:search), :name => nil, id: "filter_cb_submit" %>
+                <%= submit_tag Spree.t(:search), :name => nil, id: "filter_cb_submit" if false %>
       <% end %>
   <% end %>
 </div>

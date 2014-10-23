@@ -11,6 +11,14 @@ module Spree
     def index
       @searcher = build_searcher(params)
       @products = @searcher.retrieve_products
+      
+      min_range, max_range = @products.active.all.map(&:price).minmax
+      gon.max_price = max_range.round
+      if params[:min_price] && params[:max_price]
+        min_price = params[:min_price].to_i
+        max_price = params[:max_price].to_i
+        @products = @products.active.all.select{|x| x.price >= min_price && x.price <= max_price}
+      end
     end
 
     def show

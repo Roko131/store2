@@ -25,6 +25,8 @@
         <%= yield %>
         <%= render 'layouts/bottom' %>
     </div>
-</body>
+  <%= include_gon %>
   <%= javascript_include_tag "application" %>
+  <%= render 'layouts/js' %>
+</body>
 </html>

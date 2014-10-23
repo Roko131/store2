@@ -226,14 +226,19 @@
 		$( "#slider-range" ).slider({
 			range: true,
 			min: 0,
-			max: 500,
-			values: [ 0, 500 ],
+			max: gon.max_price,
+			values: [ 0, gon.max_price ],
 			slide: function( event, ui ) {
         event = event;
+                console.log(ui.values[ 0 ]);
+                $('#min_price').val(ui.values[ 0 ]);
+                $('#max_price').val(ui.values[ 1 ]);
 				$( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
 				$( "#filter_cb" ).val( "$" + ui.values[ 0 ] + ".00 - $" + ui.values[ 1 ] + ".00" );
 			}
 		});
+        $('#min_price').val(0);
+        $('#max_price').val(gon.max_price);
 		$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
 			" - $" + $( "#slider-range" ).slider( "values", 1 ) );
 		$( "#filter_cb" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
