@@ -13,7 +13,7 @@ module Spree
       @products = @searcher.retrieve_products
       
       min_range, max_range = @products.active.all.map(&:price).minmax
-      gon.max_price = max_range.round
+      gon.max_price = max_range.ceil
       if params[:min_price] && params[:max_price]
         min_price = params[:min_price].to_i
         max_price = params[:max_price].to_i

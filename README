@@ -14,3 +14,13 @@ breadcrums
     pagination: paginator, next, prev, page
     taxons: show, _taxon
 2) responsive category headline?
+
+
+
+"spree/taxons" == params[:controller] && @taxon.children.empty?
+
+
+"spree/products" == params[:controller] && @taxon
+
+<% filters = @taxon ? @taxon.applicable_filters : [Spree::Core::ProductFilters.all_taxons] %>
+<% unless filters.empty? %>
